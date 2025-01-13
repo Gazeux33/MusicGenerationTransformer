@@ -5,6 +5,7 @@
 *.mid
 *.txt
 *.json
+*.pt
 
 # Created by https://www.toptal.com/developers/gitignore/api/jupyternotebooks,pycharm+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=jupyternotebooks,pycharm+all

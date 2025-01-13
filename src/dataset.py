@@ -7,6 +7,7 @@ class MusicDataset(Dataset):
         self.notes = notes
         self.durations = durations
         self.seq_length = seq_length
+
         if self.notes.shape != self.durations.shape:
             raise ValueError("notes and durations must have the same size")
 
