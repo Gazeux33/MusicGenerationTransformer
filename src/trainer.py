@@ -18,7 +18,8 @@ class MusicTrainer:
                 duration_vocab_size,
                  save_freq=10,
                  checkpoint_dir=None,
-                 remove_previous_models=True
+                 remove_previous_models=True,
+                 model_name = "music_model"
                  ):
         self.model = model
         self.train_loader = train_loader
@@ -30,6 +31,7 @@ class MusicTrainer:
         self.save_freq = save_freq
         self.checkpoint_dir = checkpoint_dir
         self.remove_previous_models = remove_previous_models
+        self.model_name = model_name
         self.epoch = 0
 
         # Load the checkpoint
@@ -57,7 +59,7 @@ class MusicTrainer:
 
             # Save the model
             if self.epoch % self.save_freq == 0:
-                self._save_checkpoint(f"checkpoint_{self.epoch}.pt")
+                self._save_checkpoint(f"{self.model_name}_{self.epoch}.pt")
 
             # increment the epoch
             self.epoch += 1
