@@ -3,7 +3,7 @@
 
 .idea/
 *.mid
-/data/*.txt
+/data/*/*.txt
 *.json
 *.pt
 

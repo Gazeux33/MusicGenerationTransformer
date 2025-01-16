@@ -123,8 +123,8 @@ class MusicTrainer:
 
         # Remove previous models
         if self.remove_previous_models:
-            if os.path.exists(os.path.join(self.checkpoint_dir, f"checkpoint_{self.epoch - self.save_freq}.pt")):
-                os.remove(os.path.join(self.checkpoint_dir, f"checkpoint_{self.epoch - self.save_freq}.pt"))
+            if os.path.exists(os.path.join(self.checkpoint_dir, f"{self.model_name}_{self.epoch - self.save_freq}.pt")):
+                os.remove(os.path.join(self.checkpoint_dir, f"{self.model_name}_{self.epoch - self.save_freq}.pt"))
 
     def _move_to_device(self,*data):
         return (x.to(self.device) for x in data)
