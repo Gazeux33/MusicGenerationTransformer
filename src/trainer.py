@@ -43,7 +43,7 @@ class MusicTrainer:
 
             # create a progress bar
             bar = tqdm(self.train_loader,total=len(self.train_loader))
-            bar.set_description(f"Epoch {self.epoch}")
+            bar.set_description(f"{self.epoch}/{max_epochs}")
 
 
             for x_note, x_duration, y_note, y_duration in bar:  # [256, 50],[256, 50],[256, 50],[256, 50]
@@ -123,8 +123,8 @@ class MusicTrainer:
 
         # Remove previous models
         if self.remove_previous_models:
-            if os.path.exists(os.path.join(self.checkpoint_dir, f"checkpoint_{self.epoch - 1}.pt")):
-                os.remove(os.path.join(self.checkpoint_dir, f"checkpoint_{self.epoch - 1}.pt"))
+            if os.path.exists(os.path.join(self.checkpoint_dir, f"checkpoint_{self.epoch - self.save_freq}.pt")):
+                os.remove(os.path.join(self.checkpoint_dir, f"checkpoint_{self.epoch - self.save_freq}.pt"))
 
     def _move_to_device(self,*data):
         return (x.to(self.device) for x in data)

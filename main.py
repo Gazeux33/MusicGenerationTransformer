@@ -9,7 +9,6 @@ def main(args):
     if args.preprocess:
         preprocess()
     if args.train:
-        print("Training")
         train()
 
 

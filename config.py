@@ -18,5 +18,5 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 NOTES_TOKENIZER_FILE = "notes_vocab.json"
 DURATIONS_TOKENIZER_FILE = "durations_vocab.json"
 CHECKPOINT_DIR = "checkpoints"
-TRAINING_SAVING_FREQ = 5
+TRAINING_SAVING_FREQ = 1
 EPOCHS = 5000

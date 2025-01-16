@@ -25,13 +25,16 @@ class VectorizeLayer(nn.Module):
         self.vocab.update({len(self.vocab) + i: token for i, token in enumerate(sorted(tokens))})
 
     def save_vocab(self, path: str, indent=2):
+        data = {"vocab": self.vocab, "special_tokens": self.special_tokens}
         with open(path, "w+") as f:
-            json.dump(self.vocab, f, indent=indent)
+            json.dump(data, f, indent=indent)
         print(f"Vocab saved to {path}")
 
     def load(self, path: str):
         with open(path, "r") as f:
-            self.vocab = json.load(f)
+            data = json.load(f)
+            self.vocab = data["vocab"]
+            self.special_tokens = data["special_tokens"]
         print(f"Vocab loaded from {path}")
 
     def forward(self, inputs):
