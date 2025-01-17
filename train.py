@@ -35,7 +35,8 @@ def build_model(notes_vectorizer, durations_vectorizer):
                        num_heads=N_HEADS,
                        key_dim=KEY_DIM,
                        feed_forward_dim=FEED_FORWARD_DIM,
-                       dropout_rate=DROPOUT_RATE)
+                       dropout_rate=DROPOUT_RATE,
+                       device=DEVICE)
     return model
 
 def build_trainer(model, dataloader, notes_vectorizer, durations_vectorizer):

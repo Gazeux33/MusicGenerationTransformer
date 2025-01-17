@@ -39,6 +39,7 @@ class MusicTrainer:
             self._load_checkpoint()
 
     def train(self,max_epochs):
+        print("Starting train :",self.device)
         while self.epoch < max_epochs:
 
             # create a progress bar

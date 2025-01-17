@@ -8,6 +8,7 @@ from src.vectorization import VectorizeLayer
 
 
 def preprocess():
+    create_dirs(DATA_PATH, PARSED_SEQUENCES_DATA_PATH, VOCAB_PATH,PARSED_DATA_PATH)
     music_parser = music21.converter
 
     sequence_notes, sequence_durations = parse_midi_files(
@@ -27,3 +28,8 @@ def create_vectorizer(save=True,**data):
 
 def get_midi_files():
     return [os.path.join(DATA_PATH, f) for f in os.listdir(DATA_PATH) if f.endswith(".mid")]
+
+def create_dirs(*dirs):
+    for d in dirs:
+        if not os.path.exists(d):
+            os.makedirs(d)
