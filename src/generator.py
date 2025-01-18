@@ -3,10 +3,10 @@ import torch
 import numpy as np
 import music21
 
-from utils import get_midi_note
+from src.utils import get_midi_note
 from config import *
 
-class MusicGenerator():
+class MusicGenerator:
     def __init__(self, model, index_to_note, index_to_duration, dir_path, top_k=10):
         self.model = model
         self.index_to_note = index_to_note

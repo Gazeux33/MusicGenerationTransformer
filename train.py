@@ -10,15 +10,6 @@ from src.trainer import MusicTrainer
 from src.utils import load_parsed_files
 from src.vectorization import VectorizeLayer
 
-"""
-def load_vectorizer():
-    notes_vectorizer = VectorizeLayer(special_tokens=["[UNK]",""])
-    notes_vectorizer.load(str(os.path.join(VOCAB_PATH, NOTES_TOKENIZER_FILE)))
-    durations_vectorizer = VectorizeLayer(special_tokens=["[UNK]",""])
-    durations_vectorizer.load(str(os.path.join(VOCAB_PATH, DURATIONS_TOKENIZER_FILE)))
-    return notes_vectorizer, durations_vectorizer
-"""
-
 
 def get_dataloader(notes_tokenized, durations_tokenised):
     # Create Custom Dataset
